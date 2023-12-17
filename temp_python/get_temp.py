@@ -10,9 +10,9 @@ class DateTimeEncoder(json.JSONEncoder):
             return obj.isoformat()
         return json.JSONEncoder.default(self, obj)
 
-api_key = "e159d8b19903e1acaad8c920d3a8ea9e"
-city_name = "Ludhiana"
-duration_limit_hours = 0.1
+api_key = "your api key obtained from weather sites"
+city_name = "your city name"
+duration_limit_hours = 0.5 # run for as much time you want in hours
 start_time = time.time()  # Record the start time
 temperature_data = []
 
@@ -40,8 +40,8 @@ while time.time() - start_time < duration_limit_hours * 3600:
 
         
 
-        # Delay for half an hour
-        time.sleep(50)  # 1800 seconds = 30 minutes
+        # Delay for your temp check in seconds
+        time.sleep(300)  # 1800 seconds = 30 minutes
 
     else:
         print(f"Error: {response.status_code}")
